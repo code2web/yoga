@@ -1,0 +1,904 @@
+
+/*========================*/
+/*=======BASIC SETUP======*/
+/*========================*/
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html{
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+body{
+	font-family: openSans;
+	text-rendering: optimizeLegibility;
+	line-height: 1.2;
+}
+
+ul li{
+	text-decoration: none;
+	list-style: none;
+}
+
+a{
+	text-decoration: none;
+}
+
+/*HEADING*/
+
+h1{
+	color: #fff;
+	font-size: 9rem;
+	font-weight: bolder;
+	letter-spacing: .3rem;
+	text-transform: uppercase;
+}
+
+h1::after {
+	content: "";
+	display: block;
+	background: #bbb5b5;
+	width: 95%;
+	height: .3rem;
+	border-radius: .3rem;
+	margin-left: 2rem;
+}
+
+
+/*========================*/
+/*=======REUSABLE COMPONANTS======*/
+/*========================*/
+
+.row{
+	display: flex;
+	justify-content: space-around;
+}
+
+section{
+	height: 100rem;
+	padding: 5rem 0;
+}
+
+h2{
+	color: #3f505a;
+	font-size: 5rem;
+	font-weight: bolder;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h3{
+	margin-bottom: 4rem;
+	font-size: 6rem;
+	font-weight: bold;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h4{
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: bold;
+	text-transform: capitalize;
+	margin-bottom: 2rem;
+}
+
+h5{
+	font-size: 3rem;
+	font-weight: bold;
+	color: #3f505a;
+	text-transform: uppercase;
+	margin-bottom: 1rem;
+}
+
+/* PRAGRAPG */
+
+.description {
+	width: 50%;
+	margin-left: 25%;
+	margin-bottom: 7rem;
+	text-align: center;
+	color: #fff;
+	font-size: 2.5rem;
+	font-weight: lighter;
+}
+
+/*BUTTON*/
+
+.btn,
+.btn:link,
+.btn:visited{
+	background: #49c9d4;
+	color: #fff;
+	font-size: 2.3rem;
+	text-decoration: none;
+	text-transform: capitalize;
+	padding: 1rem 2rem;
+	border-radius: .5rem;
+	display: inline-block;
+	border: none;
+}
+
+
+/*========================*/
+/*=======HEADER SECTION======*/
+/*========================*/
+
+.header{
+	position: relative;
+	background: url(img/yoga-header-bg.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: bottom;
+	height: 90rem;
+}
+
+.row-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.logo {
+	height: 10rem;
+	width: auto;
+}
+
+/* MAIN NAV */
+
+.main-nav {
+	padding-top: 5rem;
+	padding-bottom: 3rem;
+}
+
+.line-nav {
+	display: inline-block;
+	background: #49c9d4;
+	height: 2rem;
+	width: .3rem;
+	border-radius: .3rem;
+	margin: 0 3rem;
+}
+
+.main-nav li{
+	display: inline-block;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+	color: #49c9d4;
+	text-decoration: none;
+	text-transform: uppercase;
+	padding: 1rem 2rem;
+	border-radius: .3rem;
+	font-size: 2rem;
+}
+
+.main-nav li:hover a:link,
+.main-nav li:hover a:visited {
+	background: rgba(255, 255, 255, 1.0);
+}
+
+.active {
+	background: rgba(255, 255, 255, 1.0);
+	padding: 1rem 2rem;
+	border-radius: .3rem;
+}
+.row-hero {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.hero-text-box {
+	margin-top: 5rem;
+}
+
+.hero-text-box h4 {
+	color: #49c9d4;
+	letter-spacing: .2rem;
+	text-transform: uppercase;
+	font-size: 2rem;
+	font-weight: bold;
+	padding-top: 5rem;
+}
+
+.hero-text-box h4.h4-text {
+	color: #fff;
+}
+.change-text::after {
+	content: "";
+	animation: changetext 10s infinite linear;
+	color: goldenrod;
+	text-transform: capitalize;
+}
+@keyframes changetext {
+	0%{content: "Bhai Bari";}
+	20%{content: "Mongol Bari";}
+	35%{content: "Kaji Bari";}
+	60%{content: "Sorisha Bari";}
+	80%{content: "Chairman Bari";}
+	100%{content: "Molla Bari";}
+}
+
+.hero-text-box p {
+	color: #49c9d4;
+	font-size: 2rem;
+	text-align: center;
+	width: 50rem;
+}
+ 
+.hero-text-box .btn {
+	margin-top: 2rem;
+	color: #3f505a;
+	background: #fff;
+	border-bottom: .3rem solid #99a2a7;
+}
+
+
+/*=== STICKY menu ===*/
+.nav {
+	background: #334f5a;
+	/*2f4e5da6*/
+}
+.sticky {
+	position: fixed;
+	top: 0;
+	left: 0;
+	/*right: 2rem;*/
+	width: 100%;
+	z-index: 999;
+}
+.sticky .nav {
+	background: rgba(63, 80, 90, 0.9);
+}
+.sticky .row-nav {
+	flex-direction: row-reverse;
+}
+.sticky .main-nav{
+	padding-top: 0;
+	padding-bottom: 0;
+}
+.sticky .logo {
+	height: 3rem;
+}
+
+
+/*=== mobile menu ===*/
+
+.mobile-menu span {
+	color: #fff;
+	font-size: 4rem;
+	float: right;
+	display: none;
+}
+
+.mobile-menu span:hover {
+	cursor: pointer;
+}
+
+.overlay {
+	position: fixed;
+	height: 95%;
+	width: 0;
+	top: 0;
+	left: 0;
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow-x: hidden;
+	transition: .5s;
+	z-index: 1;
+}
+
+.overlay-content {
+	position: relative;
+	/*top: 5%;*/
+	width: 100%;
+	text-align: center;
+	margin-top: 10rem;
+	/* for content top gap */
+}
+
+.overlay a {
+	text-decoration: none;
+	display: block;
+	font-size: 3rem;
+	text-transform: uppercase;
+	letter-spacing: .3rem;
+	color: #999;
+	padding: 1rem 0;
+	/*nothing effect, but hover padding incres*/
+}
+
+.overlay a:hover {
+	color: #009688;
+	font-weight: bold;
+}
+
+.overlay .closebtn {
+	position: absolute;
+	/*top: 1rem;*/
+	/*right: 3.5rem;*/
+	top: 0;
+	right: 0;
+	font-size: 6rem;
+}
+
+
+/*=== mobile menu End ===*/
+
+
+/*========================*/
+/*=======OUR PHILOSOPHY SECTION======*/
+/*========================*/
+
+.philosophy {
+	background: url(img/our-bg.png);
+	background-size: cover;
+	height: 101rem;
+}
+
+.philosophy h2 {
+	padding-top: 16rem;
+}
+
+/* line by div. this reason responsive very difficult but ::after line very easy.  */
+.philosophy .line-h2 {
+	display: block;
+    background: #49c9d4;
+    height: .5rem;
+    width: 40rem;
+    border-radius: .3rem;
+    margin-left: 40%;
+}
+
+.philosophy p {
+	font-size: 3rem;
+	font-weight: lighter;
+	color: #3f505a;
+	padding: 8rem 0 4rem 0;
+}
+
+.philosophy .box-left {
+	text-align: right;
+	width: 45%;
+}
+
+.philosophy .box-right {
+	width: 45%;
+}
+
+.philosophy .btn {
+	background: #3f505a;
+	float: right;
+	margin-right: 5%;
+}
+
+
+/*========================*/
+/*=======READ MORE SECTION======*/
+/*========================*/
+
+.more {
+	background: url(img/read-more-bg-with-right-poly.png);
+	height: 180rem;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.more .more-box {
+}
+
+.more-box-with {
+	width: 28.2rem;
+}
+
+.more-box-f {
+	padding-top: 42rem;
+}
+
+.more-box-s {
+	padding-top: 32rem;
+}
+
+.more-box-l {
+	padding-top: 22rem;
+}
+
+.more-box-img {
+	width: 100%;
+}
+
+.more h3 {
+	font-size: 3.4rem;
+	color: #48b9c4;
+}
+
+.more-box p {
+	margin-top: 2.5rem;
+	color: #fff;
+	font-size: 2.5rem;
+	text-align: left;
+	font-weight: lighter;
+}
+
+.more-box .btn {
+	color: #3f505a;
+}
+
+.read-more-poly {
+	margin-top: 3rem;
+}
+.read-more-poly img {
+	float: left;
+	margin-right: 2rem;
+}
+
+
+/*========================*/
+/*=======BEGINNERS SECTION======*/
+/*========================*/
+
+.begin {
+	height: 75rem;
+}
+.row-begin-h2 {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 4rem;
+}
+.begin-h2 {
+	width: 70rem;
+	height: 100%;
+	font-size: 4rem;
+	border: .3rem solid #3f505a;
+	border-radius: 1rem;
+}
+
+.begin .begin-box {
+	/*margin: 0 5%;*/
+}
+
+.begin-box-l p {
+	width: 45rem;
+}
+
+.begin p {
+	text-align: justify;
+	font-size: 3rem;
+	color: #3f505a;
+	/*margin: 8rem 5rem 0 0;*/
+}
+.begin-box-r {
+	/*align-self: center;*/
+}
+.begin-box-r img {
+	/*margin: 8rem 0 0 0;*/
+}
+
+.begin-poly .btn {
+	color: #49c9d4;
+	background: #fff;
+}
+
+.begin-poly {
+	margin-top: 4rem;
+}
+.begin-poly img {
+	float: left;
+	margin-right: 2rem;
+}
+
+
+/*========================*/
+/*=======REGISTRATION SECTION======*/
+/*========================*/
+
+.registration {
+	height: 125rem;
+	padding-top: 10rem;
+	background: url(img/registration-bg2.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom;
+}
+
+.registration .box-left {
+	height: 53rem;
+}
+
+.registration .box-left img {}
+
+.registration .box-right {
+	height: 49.2rem;
+	width: 40rem;
+	background: #3f505a;
+	font-size: 3rem;
+	font-weight: lighter;
+	color: #fff;
+}
+
+.registration .box-right .box-right-p {
+	padding: 10rem 8rem;
+	text-align: center;
+
+}
+.registration .box-right .box-right-poly {
+	float: right;
+	padding: 7rem 7rem;
+}
+
+.registration .box-right .box-right-poly img {
+	float: left;
+	margin-right: 2rem;
+}
+
+.registration .box-right .box-right-poly p {
+	float: left;
+}
+
+.row-reg {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.yoga-bold {
+	font-size: 8rem;
+	text-transform: uppercase;
+	color: #fff;
+	background: #3f505a;
+	border-radius: .5rem;
+	padding: 0 5rem;
+	display: inline-block;
+	margin-top: 8rem;
+}
+
+.registration h3 {
+	font-size: 3.5rem;
+	color: #3f505a;
+	background: #fff;
+	padding: 1rem 5rem;
+	border-radius: .5rem;
+	display: inline-block;
+}
+
+.registration h2 {
+	color: #3f505a;
+	display: inline-block;
+}
+
+.text-reg {
+}
+
+.registration .btn-reg:link,
+.registration .btn-reg:visited {
+	font-size: 3rem;
+	text-transform: capitalize;
+	color: #fff;
+	background: #3f505a;
+	margin-top: 4rem;
+}
+
+
+/*========================*/
+/*=======CLSASS SECTION======*/
+/*========================*/
+/*==========
+
+.row-hero {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+}
+
+.hero-text-box-banner {
+	padding-bottom: 70px;
+	height: 100%;
+}
+
+.hero-text-box-banner p {
+	width: 40%;
+	text-align: center;
+	color: white;
+}
+
+.services-wrapper {
+	width: 100%;
+	height: 100vh;
+	position: relative;
+}
+
+.container {
+	width: 100%;
+	height: 100vh;
+	z-index: 5;
+}
+
+.video-container {
+	width: 100%;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -6;
+}
+
+.video-container video {
+	width: 100%;
+	height: 100vh;
+	object-fit: cover;
+}
+
+.color-overlay {
+	width: 100%;
+	height: 100vh;
+	background-color: #000;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.6;
+}
+==============*/
+
+.class {
+	background: linear-gradient(rgba(73, 201, 212, 0.5),rgba(73, 201, 212, 0.5));
+	background-color: #000;
+	opacity: 0.9;
+	height: 80rem;
+	position: relative;
+}
+.container {
+	z-index: 5;
+}
+.video-container {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: -6;
+}
+
+.video-container video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.class-box {
+}
+
+.class-box .class-box-with {
+	width: 28rem;
+}
+.class-box .class-box-with:hover {
+	width: 30rem;
+	border: 1rem solid rgba(73, 201, 212, 0.5);
+	border-radius: .5rem;
+	transition: .9s;
+}
+.class-box .class-box-with .class-img {
+	width: 100%;
+}
+.class-box .class-box-with p {
+	width: 90%;
+}
+
+.class h3 {
+	font-size: 3rem;
+	/*color: #3f505a;*/
+	color: #fff;
+	text-align: left;
+}
+
+.class p {
+	width: 32rem;
+	margin-top: 2rem;
+	/*color: #3f505a;*/
+	color: #fff;
+	font-size: 2.5rem;
+	text-align: left;
+	font-weight: lighter;
+	line-height: 1.5;
+}
+
+
+/*========================*/
+/*=======METHODOLOGY SECTION======*/
+/*========================*/
+
+.methodology {
+	padding-top: 20rem;
+	background: url(img/methodology-bg.png),#d4d8da;
+	background-size: cover;
+}
+
+.row-methodology-h2 {
+	display: flex;
+	justify-content: center;
+}
+.methodology h2 {
+	color: #49c9d4;
+}
+
+.methodology h2::after {
+	content: "";
+    display: block;
+    background: #49c9d4;
+    height: .5rem;
+    width: 90%;
+    border-radius: .3rem;
+    margin-left: 5%;
+}
+
+.methodology p {
+	font-size: 3rem;
+	font-weight: lighter;
+	color: #fff;
+	margin: 3rem 0;
+}
+
+.methodology .box-left {
+	text-align: right;
+	width: 44%;
+}
+
+.methodology .box-right {
+	width: 44%;
+}
+
+.methodology .btn {
+	color: #3f505a;
+	background: #fff;
+}
+
+.row-methodology {
+	display: flex;
+	justify-content: center;
+}
+
+
+/*========================*/
+/*=======THERAPY SECTION======*/
+/*========================*/
+
+.therapy{
+	margin-top: -5rem;
+	padding-top: 8rem;
+	background: url(img/therapy-bg.png),#d4d8da;
+	background-size: cover;
+}
+
+.row-therapy {
+	display: flex;
+	justify-content: center;
+}
+
+.therapy .read-more-poly {
+	margin-top: 3rem;
+}
+
+.therapy .read-more-poly img {
+	/*margin-right: 2rem;*/
+}
+
+/* https://bennettfeely.com/clippy/ */
+
+.therapy-div-content::before {
+	content: "";
+	display: inline-block;
+	height: 3rem;
+	width: 3rem;
+	background: #49c9d4;
+	clip-path: polygon(0 67%, 100% 100%, 79% 0);
+	margin-right: 3rem;
+}
+
+.therapy-div-content {
+	color: #3f505a;
+	font-size: 4rem;
+	font-weight: bold;
+	letter-spacing: 1rem;
+}
+
+.line-h2 {
+	display: flex;
+	justify-content: center;
+}
+
+.line-h2 h2 {
+	margin-top: 4rem;
+	color: #49c9d4;
+}
+
+.line-h2 h2::after {
+	content: "";
+	display: block;
+    background: #49c9d4;
+    height: .5rem;
+    width: 90%;
+    border-radius: .3rem;
+    margin-left: 5%;
+}
+
+
+/*========================*/
+/*=======FOOTER SECTION======*/
+/*========================*/
+
+.footer {
+	padding-top: 15rem;
+	background: url(img/footer-bg.png);
+	background-size: cover;
+	background-position: center center;
+}
+
+.footer-box {
+	display: flex;
+	justify-content: center;
+}
+
+.m-r-l {
+	padding-left: 2%;
+}
+
+.m-r-l:last-child {
+	padding-right: 2%;
+}
+
+.line-footer {
+	display: inline-block;
+	content: "";
+	background: #fff;
+	height: 5rem;
+	width: .5rem;
+	border-radius: .3rem;
+	margin-top: 5rem;
+}
+
+.footer p {
+	width: 80%;
+	font-size: 2rem;
+	font-weight: lighter;
+	color: #fff;
+}
+
+.footer-nav-ul {
+}
+
+.footer-nav ul li {
+	display: inline-block;
+	margin-right: .3rem;
+}
+
+.poly3::before {
+	display: inline-block;
+	content: "";
+	height: 3rem;
+	width: 3rem;
+	background: #3f505a;
+	margin-right: 2%;
+	clip-path: polygon(0 100%, 75% 53%, 0 14%);
+}
+
+
+
+.change::after {
+	display: inline-block;
+	content: "";
+	height: 3rem;
+	width: 3rem;
+	margin-left: 50%;
+	background: #3f505a;
+	clip-path: polygon(0 100%, 75% 53%, 0 14%);
+}
